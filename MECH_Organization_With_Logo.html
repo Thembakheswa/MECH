@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MECH Organization</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Logo Styling */
+        .logo {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        /* Login Page Styling */
+        #login-page {
+            display: block;
+            background: linear-gradient(to bottom, #003366, gold);
+            color: white;
+            height: 100vh;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1, h2 {
+            font-family: 'Verdana', sans-serif;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-decoration: underline;
+            text-decoration-color: gold;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="password"] {
+            padding: 12px;
+            width: 250px;
+            margin: 10px 0;
+            border: 1px solid gold;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 12px 24px;
+            background: gold;
+            color: #003366;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #003366;
+            color: gold;
+            border: 1px solid gold;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* Home Page Styling */
+        #home-page {
+            display: none;
+            background: linear-gradient(to bottom, white, lightgrey);
+            color: black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #home-page h1 {
+            color: #003366;
+            font-size: 32px;
+            text-decoration: underline;
+        }
+
+        #home-page h2 {
+            color: grey;
+            font-size: 20px;
+        }
+
+        .folders {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .folder {
+            background: #003366;
+            color: white;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .folder:hover {
+            background: lightgrey;
+            color: #003366;
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        function validateLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const error = document.getElementById("error");
+
+            if (username === "" || password === "") {
+                error.textContent = "Please fill out all fields.";
+                return;
+            }
+
+            if (password === "MECH@2025") {
+                document.getElementById("login-page").style.display = "none";
+                document.getElementById("home-page").style.display = "block";
+            } else {
+                error.textContent = "Invalid username or password.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="login-page">
+        <img src="Preview.png" alt="MECH Logo" class="logo">
+        <h1>MECH Organization</h1>
+        <h2>Login</h2>
+        <form onsubmit="event.preventDefault(); validateLogin();">
+            <input type="text" id="username" placeholder="Username"><br>
+            <input type="password" id="password" placeholder="Password"><br>
+            <button type="submit">Login</button>
+            <div id="error" class="error"></div>
+        </form>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home-page">
+        <img src="Preview.png" alt="MECH Logo" class="logo">
+        <h1>MAKE EVERY CHILD HAPPY</h1>
+        <h2>WELCOME TO THE MECH ORGANIZATION WEBSITE.</h2>
+
+        <div class="folders">
+            <div class="folder">Proof of Registration Application</div>
+            <div class="folder">Financial Records</div>
+            <div class="folder">Meetings and Agendas</div>
+            <div class="folder">Next Meeting Schedule<br>Await communication from the Chairperson</div>
+            <div class="folder">Registration Certificate</div>
+            <div class="folder">Office Bearers Contact Details
+                <div>
+                    <b>Chairperson:</b> MR TST KHESWA<br>
+                    0670207384<br>
+                    Founder.MECH@outlook.com
+                </div>
+                <div>
+                    <b>Secretary:</b> MISS SA BHENGU<br>
+                    Secretary.MECH@outlook.com
+                </div>
+                <div>
+                    <b>Treasurer:</b> MR S BIYELA<br>
+                    Treasurer.MECH@outlook.com
+                </div>
+            </div>
+            <div class="folder">Distribution Plan</div>
+            <div class="folder">Food Parcels Distribution Register</div>
+            <div class="folder">MECH Constitution 2025</div>
+            <div class="folder">MECH Proposal 2025</div>
+            <div class="folder">Employees Contracts</div>
+        </div>
+    </div>
+</body>
+</html>
